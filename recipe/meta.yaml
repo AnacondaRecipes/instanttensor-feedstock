@@ -1,25 +1,31 @@
-{% set name = "<PLEASE ADD PKG NAME>" %}
-{% set version = "<PLEASE ADD PKG VERSION>" %}
+{% set name = "instanttensor" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: <sha256>
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: d9a986b98d6d4c95102bc8471733cbe9be1e4bb425b7c8be2b16948f116bcb65
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: True  # [py<38]
+  skip: true  # [py<39]
 
 requirements:
   host:
     - python
     - pip
+    - setuptools >=65.0
+    - wheel
+    - pytorch {{ pytorch }}
   run:
     - python
+    - pytorch >=2.8.0
+  build:
+    - {{ compiler('c') }}
 
 test:
   imports:
@@ -30,15 +36,15 @@ test:
     - pip check
 
 about:
-  home: <PLEASE ADD HOME URL>
+  home: https:// ADD HOME URL>
   summary: <PLEASE ADD SUMMARY>
   description: |
     <PLEASE ADD DESCRIPTION>
   license: <PLEASE ADD LICENSE>
   license_family: <PLEASE ADD LICENSE_FAMILY>
   license_file: <PLEASE_ADD_LICENSE_FILE>
-  dev_url: <PLEASE ADD DEV URL>
-  doc_url: <PLEASE ADD DOC URL>
+  dev_url: https:// ADD DEV URL>
+  doc_url: https:// ADD DOC URL>
 
 extra:
   recipe-maintainers:
