@@ -1,13 +1,14 @@
-About <pkg_name>-feedstock
+About instanttensor-feedstock
 =======================
 
 Feedstock license: [BSD-3-Clause](LICENSE)
 
-Home: <home_url>
+Home: https://github.com/scitix/InstantTensor
 
-Package license: <pkg_license>
+Package license: Apache-2.0
 
-Summary: <pkg_summary>
+InstantTensor is an ultra-fast, distributed Safetensors loader designed to maximize I/O throughput when moving model
+weights from Safetensors files to GPU memory.
 
 
 Current release info
@@ -15,19 +16,19 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-<pkg_name>-green.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Downloads](https://img.shields.io/conda/dn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Version](https://img.shields.io/conda/vn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Platforms](https://img.shields.io/conda/pn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-instanttensor-green.svg)](https://anaconda.org/anaconda/instanttensor) | [![Conda Downloads](https://img.shields.io/conda/dn/anaconda/instanttensor.svg)](https://anaconda.org/anaconda/instanttensor) | [![Conda Version](https://img.shields.io/conda/vn/anaconda/instanttensor.svg)](https://anaconda.org/anaconda/instanttensor) | [![Conda Platforms](https://img.shields.io/conda/pn/anaconda/instanttensor.svg)](https://anaconda.org/anaconda/instanttensor) |
 
-Installing <pkg_name>
+Installing instanttensor
 ==================
 
-Installing `<pkg_name>` from the main channel can be achieved by:
+Installing `instanttensor` from the main channel can be achieved by:
 
 ```
-conda install <pkg_name>
+conda install instanttensor
 ```
 
-It is possible to list all of the versions of `<pkg_name>` available on your platform with `conda`:
+It is possible to list all of the versions of `instanttensor` available on your platform with `conda`:
 
 ```
-conda search <pkg_name>
+conda search instanttensor
 ```

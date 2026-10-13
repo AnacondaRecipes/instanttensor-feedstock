@@ -12,39 +12,44 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: true  # [py<39]
+  skip: true  # [py<310]
 
 requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
+    - setuptools >=65.0
+    - wheel
   host:
     - python
     - pip
-    - setuptools >=65.0
-    - wheel
+    #- setuptools >=65.0
+    #- wheel
     - pytorch {{ pytorch }}
   run:
     - python
     - pytorch >=2.8.0
-  build:
-    - {{ compiler('c') }}
 
 test:
   imports:
-    - {{ name.replace('-', '.') }}
+    - instanttensor
   requires:
     - pip
   commands:
     - pip check
 
 about:
-  home: https:// ADD HOME URL>
-  summary: <PLEASE ADD SUMMARY>
+  home: https://github.com/scitix/InstantTensor
+  summary: An ultra-fast, distributed Safetensors loader
   description: |
-    <PLEASE ADD DESCRIPTION>
-  license: <PLEASE ADD LICENSE>
-  license_family: <PLEASE ADD LICENSE_FAMILY>
-  license_file: <PLEASE_ADD_LICENSE_FILE>
-  dev_url: https:// ADD DEV URL>
-  doc_url: https:// ADD DOC URL>
+    InstantTensor is an ultra-fast, distributed Safetensors loader designed to maximize I/O throughput when moving model
+    weights from Safetensors files to GPU memory.
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE
+  dev_url: https://github.com/scitix/InstantTensor
+  doc_url: https://github.com/scitix/InstantTensor
 
 extra:
   recipe-maintainers:
